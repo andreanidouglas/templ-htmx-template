@@ -9,7 +9,7 @@ all: $(out) $(node) templates go tailwind
 
 
 templates: $(components)
-	/home/cmte/go/bin/templ generate $(components)
+	templ generate $(components)
 
 go: $(go_files)
 	go build -o out/cmd/server -v $(go_files)
