@@ -1,0 +1,34 @@
+package components
+
+import "strconv"
+
+templ header() {
+	<head>
+		<script src="/js/htmx.min.js"></script>
+		<link rel="stylesheet" href="./css/index.css"></link>
+	</head>
+}
+
+templ Count(global int) {
+	<div id="global"><h1>Global is {strconv.Itoa(global)} </h1></div>
+}
+
+templ counts(global, session int) {
+	<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="customForm" action="/" method="POST" hx-post="/count" hx-target="#global"> 
+		<label class="blck text-gray-800 text-sm font-bold mb-2" for="name">Name</label>
+		<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" type="text" id="name" />	
+
+		<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2" type="submit" name="global" value="global">Ok</button>
+	</form>
+
+	@Count(global)
+
+}
+
+templ Page(global, user int){
+	<!DOCTYPE html>
+	<html lang="en">
+		@header()
+		@counts(global, user)
+	</html>
+}

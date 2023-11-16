@@ -1,0 +1,5 @@
+out/
+node_modules/
+components/**/*_templ.go
+
+assets/css/index.css
