@@ -1,5 +1,5 @@
 {
-  "name": "templ-go",
+  "name": "templ-htmx-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "serve": "out/cmd/server"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "tailwindcss": "^3.3.5"
   }
